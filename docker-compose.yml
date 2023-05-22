@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: patolsima_ui
+    image: patolsima_ui
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    networks:
+      - frontend
+    volumes:
+      - .:/app
+
+networks:
+  frontend:
+    name: patolsima-api_frontend 
+    external: true
